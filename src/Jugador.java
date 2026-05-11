@@ -60,7 +60,7 @@ public class Jugador {
     }
 
     public void setEquipo(EquipoPartido eq){
-        if (this.getEquipo() != null){    
+        if (this.getEquipo() == null){    
             this.equipo = eq;
         }
     }

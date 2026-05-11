@@ -6,13 +6,15 @@ import java.util.Scanner;
 public class EquipoPartido {
 
     private int idTeam;
+    private String name;
     private static int contadorIds = 1;
     private ArrayList<Partido> partidos = new ArrayList<>();
     private ArrayList<Jugador> jugadores = new ArrayList<>();
 
-    public EquipoPartido(){
+    public EquipoPartido(String name){
         this.idTeam = contadorIds;
         this.contadorIds++;
+        this.name = name;
     }
 
     public void printJugadores(){
@@ -22,6 +24,9 @@ public class EquipoPartido {
         }
     }
 
+    public String getName(){
+        return this.name;
+    }
 
     public int getId(){
         return this.idTeam;
@@ -31,33 +36,10 @@ public class EquipoPartido {
         return jugadores.size();
     }
 
-    public void nuevoPartido(EquipoPartido eq2, int golesEq1, int golesEq2){
-        Partido nuevo = new Partido(this, eq2, golesEq1, golesEq2);
-        partidos.add(nuevo);
-        eq2.partidos.add(nuevo);
-        for (Jugador j : this.jugadores){
-                
-            Scanner sc = new Scanner(System.in);
-            System.out.println("Ingrese goles de " + j.getName());
-            int golesJugador = sc.nextInt();
-            
-            System.out.println("Ingrese puntuacion de " + j.getName());
-            int puntJugador = sc.nextInt();
-
-            j.getEstadisticaJugador().actualizarEst(golesJugador, puntJugador);
-        }
-        for (Jugador j : eq2.jugadores){
-                
-            Scanner sc = new Scanner(System.in);
-            System.out.println("Ingrese goles de " + j.getName());
-            int golesJugador = sc.nextInt();
-            
-            System.out.println("Ingrese puntuacion de " + j.getName());
-            int puntJugador = sc.nextInt();
-
-            j.getEstadisticaJugador().actualizarEst(golesJugador, puntJugador);
-        }
+    public void agregaPartido(Partido p){
+        partidos.add(p);
     }
+    
 
     public void nuevoJugador(Jugador j){
         if (cantJugadores() < 5){
