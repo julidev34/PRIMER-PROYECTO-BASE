@@ -1,7 +1,6 @@
 package src;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class EquipoPartido {
 
@@ -30,6 +29,10 @@ public class EquipoPartido {
 
     public int getId(){
         return this.idTeam;
+    }
+
+    public ArrayList<Jugador> getJugadores(){
+        return this.jugadores;
     }
 
     public int cantJugadores(){
