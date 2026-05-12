@@ -56,7 +56,7 @@ public class Main {
                 int idJ = sc.nextInt();
                 sc.nextLine();
                 Jugador j = liga.buscarJugadorPorId(idJ);
-                
+
                 if (j == null){
                     System.out.println("Ese ID no pertenece a ningun jugador");
                     continue;
@@ -109,7 +109,7 @@ public class Main {
                         continue;
                     }
 
-                    System.out.println("GOLES EQUIPO 1 :");
+                    System.out.println("GOLES EQUIPO 2 :");
                     int golesEq2 = sc.nextInt();
                     sc.nextLine();
 
@@ -177,5 +177,6 @@ public class Main {
 
         }
     }
+
 
 }
