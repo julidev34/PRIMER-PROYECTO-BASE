@@ -107,7 +107,7 @@ public class Liga {
 
         for(EquipoPartido e : equipos){
             
-            System.out.println(pos + "° EQUIPO " + e.getId());
+            System.out.println(pos + " " + e.getName());
 
             System.out.println(
             "PJ: " + e.getPJ() +
